@@ -4,9 +4,9 @@ import Hero from "./components/Hero"
 import NavBar from "./components/NavBar"
 import About from "./pages/About"
 import Contact from "./pages/Contactos"
-import Experience from "./pages/experience"
+import Experience from "./pages/Experience"
 import Projectos from "./pages/Projectos"
-import Skills from "./pages/skills"
+import Skills from "./pages/Skills"
 
 
 
