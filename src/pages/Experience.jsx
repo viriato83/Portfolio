@@ -1,160 +1,175 @@
 import React from "react";
-import img from "../components/img/gif.gif";
-import {motion} from "framer-motion"
-const projetos = [
+import { motion } from "framer-motion";
+import img from "../components/img/imagens/aquario.jpg";
+
+/* ================= SERVIÇOS AQUAFISH ================= */
+
+const servicos = [
   {
-    nome: "Sistema de Gestão Comercial",
+    nome: "Fornecimento  de Equipamentos",
     descricao:
-      "Sistema completo para controlar vendas, estoque e clientes, feito com Spring Boot e React.",
-    tecnologias: ["Java", "Spring Boot", "React", "MySQL"],
+      "A Aquafish fornece  a grosso equipamentos como máquinas semi-industriais, materiais de pesca, material agricola outros.",
   },
   {
-    nome: "Site Institucional Moderno",
-    descricao: "Website responsivo para empresa de serviços, usando Tailwind e React.",
-    tecnologias: ["React", "Tailwind CSS", "JavaScript"],
+    nome: "Comercialização de Peixe Fresco",
+    descricao:
+      "Venda de peixe fresco e selecionado (tilápia e peixe do mar) para mercados, restaurantes, instituições e clientes finais.",
   },
   {
-    nome: "Dashboard Interativo",
-    descricao: "Dashboard com gráficos e análises em tempo real para negócios.",
-    tecnologias: ["React", "Chart.js", "API REST"],
+    nome: "Fornecimento de Alevinos",
+    descricao:
+      "Disponibilização de alevinos de tilápia de qualidade para produtores locais e projetos de aquacultura.",
+  },
+  {
+    nome: "Consultoria em Aquacultura",
+    descricao:
+      "Apoio técnico em montagem de viveiros, manejo alimentar, controlo de mortalidade e otimização da produção.",
+  },
+  {
+    nome: "Formação e Capacitação",
+    descricao:
+      "Treinamentos práticos e teóricos em piscicultura, voltados para produtores iniciantes e comunidades locais.",
+  },
+  {
+    nome: "Pesca e Comercialização de Peixe do Mar",
+    descricao:
+      "Atuação na pesca artesanal e comercialização de espécies marinhas, respeitando normas ambientais.",
   },
 ];
+
+/* ================= LINHA DO TEMPO AQUAFISH ================= */
 
 const timeline = [
-  { ano: "2023", evento: "Início da carreira profissional como desenvolvedor full stack" },
-  { ano: "2024", evento: "Desenvolvimento de sistemas comerciais para clientes locais" },
-  { ano: "2025", evento: "Lançamento do sistema multiusuário para pequenas empresas" },
+  { ano: "2019", evento: "Início das atividades em aquacultura e pesca artesanal" },
+  { ano: "2020", evento: "Expansão da produção de tilápia e fornecimento local" },
+  { ano: "2021", evento: "Estruturação da Aquafish como empresa formal e sustentável" },
 ];
 
-const estatisticas = [
-  { label: "Projetos Web", porcentagem: 70 },
-  { label: "Sistemas Desktop", porcentagem: 20 },
-  { label: "Projetos Pessoais", porcentagem: 10 },
+/* ================= INDICADORES ================= */
+
+const indicadores = [
+  { label: "Produção Aquícola", porcentagem: 60 },
+  { label: "Pesca do Mar", porcentagem: 25 },
+  { label: "Consultoria & Formação", porcentagem: 15 },
 ];
 
-const Experience = () => {
+const Services = () => {
   return (
-    <div id="experiencia" className="flex flex-col items-center justify-center mb-20 px-6 max-w-6xl mx-auto">
-      {/* Título */}
-      <h1 className="text-4xl md:text-6xl font-bold text-cyan-500 py-6">Experiência</h1>
+    <section
+      id="servicos"
+      className="flex flex-col items-center justify-center mb-20 px-6 max-w-6xl mx-auto"
+    >
+      {/* TÍTULO */}
+      <h1 className="text-4xl md:text-6xl font-bold text-blue-500 py-6">
+        Serviços Aquafish
+      </h1>
 
-      {/* Timeline */}
-      <section className="w-full mb-12">
-        <h2 className="text-2xl text-orange-500 font-semibold mb-6 text-center">
-          Linha do Tempo
+      {/* LINHA DO TEMPO */}
+      <section className="w-full mb-14">
+        <h2 className="text-2xl text-blue-400 font-semibold mb-6 text-center">
+          Nossa Trajetória
         </h2>
-        <ul className="border-l-4 border-orange-500 ml-4">
-          {timeline.map(({ ano, evento }) => (
-           <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false,amount:0.7 }}
-            variants={{
-              hidden: { opacity: 0, x: 100 },
-              visible: { opacity: 1, x: 0 },
-            }}
-            transition={{duration:0.6}}
-           
-           >
-             <li  className="mb-6 ml-6 relative">
-              <span className="absolute -left-8 top-0 bg-orange-500 rounded-full w-6 h-6"></span>
-              <time className="font-bold text-cyan-400 text-xl">{ano}</time>
-              <p className="text-amber-50/80 mt-1 max-w-xl">{evento}</p>
-            </li>
-           </motion.section>
+
+        <ul className="border-l-4 border-blue-500 ml-4">
+          {timeline.map(({ ano, evento }, index) => (
+            <motion.li
+              key={index}
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-6 ml-6 relative"
+            >
+              <span className="absolute -left-8 top-0 bg-blue-500 rounded-full w-6 h-6"></span>
+              <time className="font-bold text-gray-600 text-xl">{ano}</time>
+              <p className="text-gray-700/80 mt-1 max-w-xl">{evento}</p>
+            </motion.li>
           ))}
         </ul>
       </section>
 
-      {/* Projetos em Destaque */}
-      <section className="w-full mb-12">
-        <h2 className="text-2xl text-orange-500 font-semibold mb-6 text-center">
-          Projetos em Destaque
+      {/* SERVIÇOS */}
+      <section className="w-full mb-16">
+        <h2 className="text-2xl text-blue-400 font-semibold mb-8 text-center">
+          O Que Fazemos
         </h2>
+
         <div className="grid md:grid-cols-3 gap-8">
-          {projetos.map(({ nome, descricao, tecnologias }) => (
-             <motion.section
-             initial="hidden"
-             whileInView="visible"
-             viewport={{ once: false,amount:0.7 }}
-             variants={{
-               hidden: { opacity: 0, y:40 },
-               visible: { opacity: 1, y: 0 },
-             }}
-             transition={{duration:0.6}}  className="bg-orange-500/40 border-2 border-orange-500 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
-              
-            
-                    <h3 className="text-cyan-400 text-xl font-bold mb-3">{nome}</h3>
-                    <p className="text-amber-50/80 mb-4">{descricao}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {tecnologias.map((tech) => (
-                        <span
-                     
-                          className="bg-cyan-700 px-3 py-1 rounded-full text-sm text-amber-50"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-              
-         </motion.section>
+          {servicos.map(({ nome, descricao }, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-blue-500/20 border-2 border-blue-500 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition"
+            >
+              <h3 className="text-blue-700 text-xl font-bold mb-3">
+                {nome}
+              </h3>
+              <p className="text-gray-800/80 text-sm leading-relaxed">
+                {descricao}
+              </p>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Estatísticas */}
-      <section className="w-full mb-12">
-        <h2 className="text-2xl text-orange-500 font-semibold mb-6 text-center">
-          Estatísticas
+      {/* INDICADORES
+      <section className="w-full mb-16">
+        <h2 className="text-2xl text-blue-400 font-semibold mb-6 text-center">
+          Áreas de Atuação
         </h2>
+
         <div className="max-w-xl mx-auto space-y-6">
-          {estatisticas.map(({ label, porcentagem }) => (
+          {indicadores.map(({ label, porcentagem }) => (
             <div key={label}>
               <div className="flex justify-between mb-1">
-                <span className="text-amber-50/80 font-semibold">{label}</span>
-                <span className="text-amber-50/80">{porcentagem}%</span>
+                <span className="text-blue-100/80 font-semibold">{label}</span>
+                <span className="text-blue-100/80">{porcentagem}%</span>
               </div>
-              <div className="w-full bg-cyan-900 rounded-full h-4">
+              <div className="w-full bg-blue-900 rounded-full h-4">
                 <div
-                  className="bg-orange-500 h-4 rounded-full"
+                  className="bg-blue-500 h-4 rounded-full transition-all"
                   style={{ width: `${porcentagem}%` }}
                 />
               </div>
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      {/* Imagem + texto final */}
+      {/* IMAGEM + TEXTO */}
       <section className="flex flex-col md:flex-row items-center gap-10">
         <img
           src={img}
-          alt="Gif representando experiência"
+          alt="Aquafish"
           className="rounded-2xl w-72 md:w-96 shadow-lg"
         />
-        <p className="max-w-lg text-amber-50/70 text-justify">
-          Durante esses anos, desenvolvi projetos diversos, desde websites institucionais
-          até sistemas complexos para gestão empresarial. Minha jornada é marcada por
-          aprendizado constante, desafios superados e a busca por soluções que agregam
-          valor real aos negócios.
+        <p className="max-w-lg text-gray-700/70 text-justify">
+          A Aquafish é uma empresa moçambicana focada na produção sustentável,
+          fornecimento e comercialização de pescado. Trabalhamos com compromisso,
+          qualidade e respeito ao meio ambiente, contribuindo para a segurança
+          alimentar e o desenvolvimento local.
         </p>
       </section>
 
-      {/* Call to action */}
+      {/* CALL TO ACTION */}
       <section className="mt-16 text-center">
-        <p className="text-amber-50/80 mb-4 text-lg">
-          Gostou do meu trabalho? Vamos conversar!
+        <p className="text-blue-100/80 mb-4 text-lg">
+          Precisa de peixe fresco ou apoio técnico em aquacultura?
         </p>
         <a
-          href="mailto:seuemail@exemplo.com"
-          className="inline-block bg-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-cyan-600 transition"
+          href="mailto:contato@aquafish.co.mz"
+          className="inline-block bg-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition"
         >
-          Contate-me
+          Fale Connosco
         </a>
       </section>
-      <div className="w-full border-b-4 border-amber-50/30 mt-10"></div>
-    </div>
+
+      <div className="w-full border-b-4 border-blue-100/30 mt-12"></div>
+    </section>
   );
 };
 
-export default Experience;
+export default Services;

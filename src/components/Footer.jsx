@@ -8,11 +8,11 @@ const Footer = () => {
             <p>&copy; 2025, Todos os direitos reservados.</p>
 
             <a href="mailto:mubaiviriato@gmail.com" className="footer-link">
-                <h5 size={16} className="inline-icon" /> Email: viriatobonifa22@gmail.com
+                <h5 size={16} className="inline-icon" /> Email: aquafishlda9@gmail.com
             </a>
         
             <a target="_blank" href="tel:+258873465311" className="footer-link">
-                <h5 size={16} className="inline-icon" /> Cell: +258873465311
+                <h5 size={16} className="inline-icon" /> Cell: +258 85 303 8699
             </a>
             </div>
 

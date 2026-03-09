@@ -1,110 +1,141 @@
-import React from 'react'
-import { FaBootstrap, FaCss3, FaHtml5, FaReact } from 'react-icons/fa'
-import { IoLogoJavascript } from 'react-icons/io'
-import { RiTailwindCssFill } from 'react-icons/ri'
-import { SiSpring } from 'react-icons/si'
-import { TbSql } from 'react-icons/tb'
-import img from "../components/img/footer.jpg"
-import {motion, stagger} from "framer-motion"
+import React from "react";
+import { motion } from "framer-motion";
+
+// Imagens
+import footerImg from "../components/img/imagens/banner_aquafish.png";
+import img1 from "../components/img/imagens/tilapia.jpg";
+import img2 from "../components/img/imagens/TilapiaV.png";
+import img3 from "../components/img/imagens/Garoupa2.png";
+import img4 from "../components/img/imagens/pedra.png";
+import img5 from "../components/img/imagens/serra.jpg";
+import img6 from "../components/img/imagens/corvina.JFIF";
+import img7 from "../components/img/imagens/vermelhao.png";
+import img8 from "../components/img/imagens/xereu.png";
+
 const Skills = () => {
-// Variantes do container
-const containerVariants = {
+  // Animações
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
+      transition: { staggerChildren: 0.15 },
+    },
   };
-  
-  // Variantes de cada skill
-  const skillVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   };
-  
-    const Skills=[
-        {icon:<FaHtml5 />,texto:"Html"},
-        {icon:<FaCss3 />,texto:"Css"},
-        {icon:<IoLogoJavascript />,texto:"Java Script"},
-        {icon:<SiSpring />,texto:"Spring Boot"},
-        {icon:<FaReact />,texto:"React"},
-        {icon:<RiTailwindCssFill />,texto:"Tailwind"},
-        {icon:<FaBootstrap />,texto:"Bootstrap"},
-        {icon:<TbSql />,texto:"Sql"},
-    ]
+
+  // Produtos
+  const produtos = [
+    { img: img1, nome: "Tilápia" },
+    { img: img2, nome: "Tilápia Vermelha" },
+    { img: img3, nome: "Garoupa" },
+    { img: img4, nome: "Peixe Pedra" },
+    { img: img5, nome: "Peixe Serra" },
+    { img: img6, nome: "Corvina" },
+    { img: img7, nome: "Peixe Vermelho" },
+    { img: img8, nome: "Xereu" },
+  ];
+
   return (
-    <div id="skils" className='Skills flex-col  my-[100px] flex items-center justify-center sm:text-center '>
-        {/* Texto */}
-        <div className='flex flex-col ml-8'>
-            <h1 className='text-3xl text-cyan-500  py-3 md:text-6xl'>Habilidades</h1>
-            <p className='text-white max-w-3xl '>Não constituem todas minhas habilidades, mas são as principais e as que mais tenho prática e mais utilizo nos meus projectos.</p> 
-        </div>
-      {/* skils  */}
-         <div className='mt-30 group'>
-            <div className='flex gap-4 '>
-                {/* for desktop */}
-                <motion.section
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.3 }}
-                    className="flex gap-4 md:flex max-md:hidden"
-                    >
-                    {Skills.map((skill, index) => (
-                        <motion.div
-                        key={index}
-                        variants={skillVariants}
-                        className="flex flex-col items-center group hover:-translate-y-3 transition-all duration-300"
-                        >
-                        {/* Ícone circular */}
-                        <div className="skils flex items-center justify-center text-4xl border-4 rounded-full h-20 w-20 border-amber-500 text-white hover:text-cyan-500 bg-orange-600/30 relative -top-9">
-                            {skill.icon}
-                        </div>
+    <section
+      id="produtos"
+      className="flex flex-col items-center justify-center my-32 px-6"
+    >
+      {/* Título */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-6xl font-bold text-cyan-500">
+          Nossos Produtos
+        </h1>
+        <p className="text-gray-600 mt-4 max-w-2xl">
+          Produção e comercialização de peixes frescos e selecionados, com
+          qualidade garantida pela Aquafish.
+        </p>
+      </div>
 
-                        {/* Texto retangular */}
-                        <div className="w-20 h-30 border-l-4 border-r-4 border-b-4 border-amber-500 text-white text-sm font-medium text-center py-2 rounded-b-md absolute flex items-center justify-center hover:h-35 duration-500">
-                            {skill.texto}
-                        </div>
-                        </motion.div>
-                    ))}
-                    </motion.section>
+      {/* GRID DESKTOP */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="hidden md:grid grid-cols-4 gap-10"
+      >
+        {produtos.map((item, index) => (
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            whileHover={{ scale: 1.08 }}
+            className="flex justify-center"
+          >
+            <div className="relative w-60 h-60 rounded-full overflow-hidden border-4 border-blue-500 group shadow-lg">
+              {/* Imagem */}
+              <img
+                src={item.img}
+                alt={item.nome}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
 
-                   {/* for mobile */}
-                   <motion.section
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.3 }}
-                    className=" grid grid-cols-4 gap-4 md:hidden max-md:grid overflow-hidden "
-                    >
-                    {Skills.map((skill, index) => (
-                        <motion.div
-                        key={index}
-                        variants={skillVariants}
-                        className="flex flex-col items-center group hover:-translate-y-3 transition-all duration-300"
-                        >
-                        {/* Ícone circular */}
-                        <div className='flex items-center justify-center text-4xl border-t-4 border-l-4 border-r-4 rounded-t-full h-20 w-20 border-amber-500 text-white  bg-orange-600/30'>
-                            {skill.icon}
-                        </div>
-
-                        {/* Texto retangular conectado */}
-                        <div className='  w-20 h-10 border-l-4 border-r-4 border-b-4 border-amber-500 text-white text-sm font-medium text-center py-2 rounded-b-md  bg-orange-600/30 relative flex items-center justify-center  '>
-                            {skill.texto}
-                        </div>
-  
-                        </motion.div>
-                    ))}
-                    </motion.section>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                <span className="text-white text-lg font-semibold tracking-wide">
+                  {item.nome}
+                </span>
+              </div>
             </div>
-         </div> 
-         {/* Footer */}
-         <div className=' mt-20 h-20 w-full'>
-             <img className=' h-20 w-full object-cover  group-hover:-translate-y-5  ' src={img}></img>
-         </div>
+          </motion.div>
+        ))}
+      </motion.div>
 
-    </div>
-  )
-}
+      {/* GRID MOBILE */}
+      {/* GRID MOBILE */}
+<motion.div
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="grid grid-cols-2 gap-8 md:hidden"
+>
+  {produtos.map((item, index) => (
+    <motion.div
+      key={index}
+      variants={itemVariants}
+      className="flex flex-col items-center"
+    >
+      {/* Círculo */}
+      <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-blue-500 shadow-md">
+        <img
+          src={item.img}
+          alt={item.nome}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-export default Skills
+      {/* Nome sempre visível */}
+      <motion.span
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="mt-3 text-sm font-semibold text-white text-center"
+      >
+        {item.nome}
+      </motion.span>
+    </motion.div>
+  ))}
+</motion.div>
+
+      {/* Footer decorativo */}
+      <div className="mt-24 w-full h-24 overflow-hidden">
+        <img
+          src={footerImg}
+          alt="Aquafish footer"
+          className="w-full h-full object-cover blur-[1px]"
+        />
+      </div>
+    </section>
+  );
+};
+
+export default Skills;

@@ -1,5 +1,5 @@
 import React from 'react'
-import img from "../components/img/foto.png"
+import img from "../components/img/imagens/sede.jpg"
 import { FaRegCircle } from 'react-icons/fa'
 import { LuCircleDashed } from 'react-icons/lu'
 import { motion } from "framer-motion";
@@ -19,13 +19,14 @@ const Hero = () => {
         >
 
         <div className="text-center md:text-left max-w-xl max-sm:text-[15px]">
-          <h2 className="text-xl text-cyan-500 uppercase max-sm:text-[15px]">Desenvolvedor Full-Stack</h2>
-          <h1 className="text-6xl font-bold text-orange-500 max-md:text-4xl max-sm:text-[25px]">
-            Viriato Bonifácio Mubai
+          <h2 className="text-xl text-cyan-500 uppercase max-sm:text-[15px]">Aquacultura & Serviços</h2>
+          <h1 className="text-6xl font-bold text-gray-600 max-md:text-4xl max-sm:text-[25px]">
+            Aquafish Sociedade Unipessoal, Lda
           </h1>
-          <p className="text-white mt-4">
-            Engenheiro Informático e de Telecomunicações <br />
-            apaixonado pelo desenvolvimento web ou de software com 2 anos de experiência
+          <p className="text-black mt-4">
+          Somos uma empresa moçambicana dedicada à produção de peixe de alta qualidade em cativeiro (piscicultura), à pesca no alto mar e à prestação de serviços especializados.
+        <br></br>
+      Atuamos com foco em qualidade, sustentabilidade e confiança, oferecendo também procurement, fornecimento de equipamentos e soluções para o setor da aquacultura e pesca.
           </p>
        
         </div>
@@ -39,18 +40,18 @@ const Hero = () => {
        viewport={{ once: false, amount: 0.3 }}
       
       >
-        <div className="  gradiente rounded-full relative w-[290px] h-[290px]  flex items-center justify-center max-sm:w-[200px]  max-sm:h-[200px]  ">
+        <div className="  gradiente rounded-full relative w-[400px] h-[400px]  flex items-center justify-center max-sm:w-[300px]  max-sm:h-[300px]  ">
       
           <LuCircleDashed
               className="   absolute text-cyan-500 w-full h-full  animate-[spin_20s_linear_infinite]"
           />
 
           {/* Moldura com gradiente e imagem */}
-            <div className="bg-gradient-to-tr from-orange-500 to-cyan-900 h-[255px] w-[255px] rounded-full flex items-center justify-center z-1 max-ms:h-[180px] max-sm:w-[180px] max-sm:h-[180px]  ">
+            <div className="bg-gradient-to-tr from-blue-500 to-cyan-900 h-[355px] w-[355px] rounded-full flex items-center justify-center z-1 max-ms:h-[180px] max-sm:w-[265px] max-sm:h-[265px]  ">
                 <img
                 src={img}
                 alt="Foto de Viriato"
-                className="w-40 h-40 md:h-60 md:w-60 rounded-full object-cover border-4 border-[#ffecdb55] "
+                className="w-90 h-67 sm:h-90 sm:w-400 rounded-full object-cover border-4 border-[#ffecdb55] "
                 />
             </div>
           </div>
@@ -65,10 +66,10 @@ const Hero = () => {
        <div className=' sobra_laranja bg-orange-500 w-2 h-2 absolute top-[70%] -left-[1%] -z-10 animate-pulse' >
 
         </div>
-        <footer className='hero_footer flex gap-15  justify-center text-2xl text-[#e27343] mt-20 border-y border-amber-600/20 py-3 max-sm:mt-60 max-sm:text-[15px] max-sm:gap-6 max-sm:w-full  '>
-            <h2 >Multidisciplinar</h2>
-            <h2>Criativo e Estratégico</h2>
-            <h2>Responsável</h2>
+        <footer className='hero_footer flex gap-15  justify-center text-2xl text-[#4382e2] mt-20 border-y border-blue-600/20 py-3 max-sm:mt-60 max-sm:text-[15px] max-sm:gap-6 max-sm:w-full  '>
+            <h2 >Piscicultura</h2>
+            <h2>Procurement</h2>
+            <h2>Pesca</h2>
         </footer>
     </div>
   )

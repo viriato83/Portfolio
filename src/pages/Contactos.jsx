@@ -29,7 +29,7 @@ export default function Contact() {
      
           <div  id="contactos" className="flex items-center justify-center flex-col m-40 " >
             <h2 className="text-center mb-4 text-cyan-500 text-3xl">Entre em Contato</h2>
-            <p className="text-center mb-5 text-amber-500 text-xl">
+            <p className="text-center mb-5 text-gray-500 text-xl">
               Tem um projeto em mente ou dúvidas? Estamos prontos para ajudar!
             </p>
 
@@ -37,8 +37,8 @@ export default function Contact() {
 
 
 
-              <div className="mb-4 flex  text-amber-50">
-                <form className=" p-5 rounded-md border-2 border-amber-50/30 flex flex-col items-center "  ref={form} onSubmit={sendEmail}>
+              <div className="mb-4 flex  text-gray-100">
+                <form className=" p-5 rounded-md border-2 border-amber-50/30 flex flex-col items-center  bg-cyan-800"  ref={form} onSubmit={sendEmail}>
                   <div className="mb-3 ">
                     <label className="form-label ">Nome:  </label>
                     <input type="text" name="name" className="bg-amber-50/10 rounded-md text-center ml-13 w-60" placeholder="Seu nome" />
@@ -52,7 +52,7 @@ export default function Contact() {
                     <label className="form-label">Mensagem: </label>
                     <textarea name="message" className="bg-amber-50/10 rounded-md text-center w-60" rows="4" placeholder="Escreva sua mensagem"></textarea>
                   </div>
-                  <button type="submit" className="text-cyan-500 border-2 border-amber-500 w-100 rounded-2xl h-10 hover:bg-amber-500 bg-cyan-500/30 cursor-pointer transition-all duration-500"
+                  <button type="submit" className="text-cyan-500 border-2 border-blue-500 w-100 rounded-2xl h-10 hover:bg-blue-500 bg-cyan-500/30 cursor-pointer transition-all duration-500"
                   onClick={()=>{
                        setAtivo(true)
                   }}
@@ -64,16 +64,16 @@ export default function Contact() {
 
               <div className="flex flex-col justify-content-center text-amber-50  ">
                 <div className="info-box mb-4">
-                  <h5 className='text-2xl text-orange-500'>📍Endereço</h5>
-                  <p>Maputo, Moçambique</p>
+                  <h5 className='text-2xl text-blue-500'>📍Endereço</h5>
+                  <p className='text-gray-600'>Maputo, Moçambique</p>
                 </div>
                 <div className="info-box mb-4">
-                <h5 className='text-2xl text-orange-500'>📩Email</h5>
-                  <p>viriatobonifa22@gmail.com</p>
+                <h5 className='text-2xl text-blue-500'>📩Email</h5>
+                  <p className='text-gray-600'>aquafishlda9@gmail.com</p>
                 </div>
                 <div className="info-box mb-4">
-                <h5 className='text-2xl text-orange-500'>📱WhatsApp</h5>
-                  <p><a href="https://wa.me/258873465311" target="_blank" rel="noopener noreferrer">+258 873 465 311</a></p>
+                <h5 className='text-2xl text-blue-500'>📱WhatsApp</h5>
+                  <p><a  href="https://wa.me/258873465311" target="_blank" rel="noopener noreferrer" className='text-gray-600'>+258 85 303 8699</a></p>
                 </div>
               </div>
             </div>

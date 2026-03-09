@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { FiArrowDownRight } from 'react-icons/fi'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-scroll';
-
+import img1 from "./img/imagens/logo.png"
 const NavBar = () => {
   const links = [
-    { link: "Home", seccion: "home" }, 
-    { link: "Sobre Mim", seccion: "about" },
-    { link: "Habilidades", seccion: "skils" },
-    { link: "Experiência", seccion: "experiencia" },
-    { link: "Projetos", seccion: "projectos" },
+   
+    { link: "Produtos", seccion: "produtos" },
+    { link: "Serviços", seccion: "servicos" },
+ 
+    { link: "Sobre Nos", seccion: "about" },
     { link: "Contatos", seccion: "contactos" },
   ];
   
@@ -19,10 +19,20 @@ const NavBar = () => {
 
   return (
     <div className="w-full flex justify-center fixed z-10">
-      <nav className="fixed top-4 flex items-center justify-between px-6 py-4 w-[90%] max-w-8xl rounded-full bg-black/40 backdrop-blur-md border border-orange-500 shadow-md">
+      <nav className="fixed top-4 flex items-center justify-between px-6 py-4 w-[90%] max-w-8xl rounded-full bg-black/40 backdrop-blur-md border border-blue-500 shadow-md">
         
         {/* Logo / Nome */}
-        <div className="nome text-white text-lg sm:text-2xl font-bold">Viriato Bonifácio Mubai</div>
+        <div className="nome text-white text-lg sm:text-2xl font-bold flex gap-5"><img src={img1} width="100px"></img>
+        <Link 
+              to="home"
+              smooth={true}
+              spy={true}
+              duration={500}
+              offset={-130}
+              className="cursor-pointer hover:text-cyan-400 transition"
+            >
+              Aquafish Lda
+            </Link></div>
 
         {/* Links Desktop */}
         <ul className="hidden lg:flex items-center gap-6 text-white font-semibold">
@@ -50,14 +60,14 @@ const NavBar = () => {
         {/* Botão principal */}
         <div className="hidden lg:flex">
           <Link to='about'>
-          <button className="btn_sobre flex items-center gap-2 px-4 py-2 text-white text-lg font-bold rounded-full border border-cyan-500 bg-gradient-to-r from-cyan-500 to-orange-400 hover:scale-105 hover:border-orange-400 transition">
-            Sobre Mim <FiArrowDownRight />
+          <button className="btn_sobre flex items-center gap-2 px-4 py-2 text-white text-lg font-bold rounded-full border border-cyan-500 bg-gradient-to-r from-cyan-500 to-blue-400 hover:scale-105 hover:border-orange-400 transition">
+            Sobre Nos <FiArrowDownRight />
           </button>
           </Link>
         </div>
 
         {/* Ícone do menu mobile */}
-        <button onClick={toggle} className="lg:hidden text-2xl text-white border border-orange-500 p-2 rounded-full hover:scale-110  transition">
+        <button onClick={toggle} className="lg:hidden text-2xl text-white border border-blue-500 p-2 rounded-full hover:scale-110  transition">
           <GiHamburgerMenu />
         </button>
       </nav>
